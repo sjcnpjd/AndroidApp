@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cookandroid.food.vm.GalleryViewModel" />
+
+        <variable
+            name="selectedImage"
+            type="com.cookandroid.food.vm.SelectedImage" />
+
+        <import type="android.view.View" />
+
+        <import type="android.graphics.Color" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        tools:context=".PostActivity">
+
+        <ImageView
+            android:id="@+id/uploadiv"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:foreground='@{viewModel._currentSelectedImage.equals(selectedImage.path)? Color.parseColor("#BBFFFFFF") : Color.parseColor("#00FFFFFF")}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/uploadet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:ems="15"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="문구 입력..."
+            android:inputType="textMultiLine"
+            android:isScrollContainer="true"
+            android:maxHeight="84dp"
+
+            android:textSize="17.6sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uploadiv"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@android:style/Widget.DeviceDefault.Light.RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="0.5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uploadet"
+            app:layout_constraintVertical_bias="0.145" />
+
+        <ImageButton
+            android:id="@+id/gallerybtn"
+            android:layout_width="47dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+
+            android:background="#00ff0000"
+            android:backgroundTint="#00ff0000"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+
+            android:scaleType="fitXY"
+            android:src="@drawable/select"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:tint="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/btn"
+            app:layout_constraintEnd_toStartOf="@+id/camerabtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/locationbtn"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+        <ImageButton
+            android:id="@+id/camerabtn"
+            android:layout_width="56dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:background="#00ff0000"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:scaleType="fitXY"
+
+            android:src="@drawable/camera"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:tint="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/gallerybtn"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+        <ImageButton
+            android:id="@+id/locationbtn"
+            android:layout_width="58dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:background="#00ff0000"
+            android:backgroundTint="#00ff0000"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:scaleType="fitXY"
+            android:src="@android:drawable/ic_dialog_map"
+            android:text="위치추가"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:tint="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/btn"
+            app:layout_constraintEnd_toStartOf="@+id/gallerybtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="UPLOAD"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+            app:layout_constraintVertical_bias="0.673" />
+
+        <TextView
+            android:id="@+id/uploadtag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="31dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uploadet" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이미지분석"
+            app:layout_constraintBottom_toTopOf="@+id/uploadet"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

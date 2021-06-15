@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PageFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="user_name"
+            android:textAlignment="textStart"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"/>
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:padding="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            />
+        <ToggleButton
+            android:id="@+id/button_favorite"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_favorite"
+            android:checked="false"
+            android:text=""
+            android:textAlignment="textStart"
+            android:textOff=""
+            android:textOn=""
+            android:textSize="30sp"/>
+
+
+        <TextView
+            android:id="@+id/restaurant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="TextView"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="Rating"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:text="TextView"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="Text"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="date"
+            android:textAlignment="textEnd"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/selected_none"
+            android:src="@android:drawable/ic_menu_delete"
+            android:tint="@color/design_default_color_error"
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+
+
+</FrameLayout>

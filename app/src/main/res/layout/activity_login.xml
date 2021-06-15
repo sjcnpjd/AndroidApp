@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/login_logo"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="foodstagram"
+        android:textColor="#000000"
+        android:textSize="70sp"
+        android:textAlignment="center"
+        android:fontFamily="@font/billabong"/>
+
+    <EditText
+        android:id="@+id/edit_id"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="전화번호,이메일 주소 또는 사용자 이름"
+        android:autofillHints=""
+         />
+
+    <EditText
+        android:id="@+id/edit_pw"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:textColor="#ffffff"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인 상세 정보를 잊으셨나요? 로그인도움말보기"
+        android:textAlignment="center"
+        android:textColor="#000000"/>
+
+
+
+
+</LinearLayout>
