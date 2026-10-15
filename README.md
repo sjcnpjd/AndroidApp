@@ -1,25 +1,30 @@
-# ChargeCheck 휴대전화 업데이트
+# ChargeCheck 1.0.3 다운로드
 
-**1.0.3-debug / versionCode 4**, Android 8.0 이상.
+## Windows Android Studio용 소스 프로젝트
+
+- [최종 소스 프로젝트 ZIP 다운로드](./ChargeCheck-1.0.3-source.zip?raw=true)
+- 출시 앱 ID: `com.sjcnpjd.chargecheck`
+- 버전: 1.0.3 / versionCode 4
+
+소스 ZIP은 AES-256으로 암호화했습니다. 압축 암호는 소유자와의 대화에서만 전달하며 이 공개 저장소에는 게시하지 않습니다. Windows 기본 압축 기능이 지원하지 않으면 [7-Zip 공식 사이트](https://www.7-zip.org/)의 Windows용 프로그램으로 압축을 푸세요.
+
+압축 해제 후 Android Studio에서 **Open**을 누르고 `settings.gradle.kts`, `gradlew.bat`, `app` 폴더가 들어 있는 `ChargeCheck` 폴더를 여세요. 새 빈 프로젝트를 만들 필요가 없습니다. 폴더의 `WINDOWS_START_HERE_KO.md`에 JDK/SDK 설정과 서명 AAB 만드는 순서를 적었습니다. 소유자의 서명 키나 비밀번호는 포함하지 않았습니다. 원본 마스터 명세서, 이전 Food 앱, Git 이력, 로컬 설정과 빌드 캐시도 제외했습니다.
+
+## 휴대전화 설치용 테스트 APK
 
 - [APK 직접 다운로드](./ChargeCheck-1.0.3-debug.apk?raw=true)
-- [ZIP 다운로드](./ChargeCheck-debug.zip?raw=true)
+- [같은 APK의 일반 ZIP 다운로드](./ChargeCheck-debug.zip?raw=true)
 
-ZIP을 받았다면 압축을 풀고 `ChargeCheck-1.0.3-debug.apk`를 여세요. 이전 debug APK와 서명이 같아 기존 앱 위에 업데이트할 수 있습니다.
+Android 8.0 이상. 현재 APK의 설치 ID는 `com.sjcnpjd.chargecheck.debug`입니다. 이전 `com.cookandroid.food.debug` 테스트 앱과 별도로 설치되며 이전 기록은 자동 이전되지 않습니다. 테스트 APK는 Play 제출용 AAB가 아닙니다. debug 광고는 Google 공식 테스트 ID를 사용하고 출시용 소스에는 소유자 제공 배너 설정을 유지했습니다.
 
-작은 화면/큰 글자에서 제목·건너뛰기 버튼이 잘리는 문제, 온보딩 단계 전환 후 스크롤 위치, 긴 전력 표시와 구형 Android 제목 줄 높이를 수정했습니다.
+이번 변경 후 debug APK, R8 최적화 출시 AAB, 포맷 검사와 API 26/28/34/36의 프레임워크 테스트 12개가 통과했습니다. 새 앱 ID, 실행 클래스, 공유 FileProvider 주소를 확인했습니다. 앞선 동일 기능 버전에서는 141개 자동 테스트와 11가지 UI 조건의 호스트 렌더링을 통과했습니다. 실제 추가 OEM, 광고/동의 SDK 송출, 소유자 서명과 출시 빌드 실기기 검증은 남아 있습니다.
 
-소유자가 제공한 앱/배너 광고 ID는 출시 빌드에 연결했습니다. 전면 광고는 미설정입니다. **이 debug APK는 Google 공식 테스트 광고를 사용합니다.** 실제 광고 송출·UMP 동의 양식·출시 서명은 별도 실기기 검증이 필요합니다.
+이 브랜치에는 설치 APK, 일반 APK ZIP, 암호화된 소스 ZIP과 이 안내문만 있습니다. 복호화한 소스나 압축 암호를 공개하지 않습니다.
 
-호스트 자동 테스트 141개가 통과했고, 11가지 화면 조건에서 159장 렌더링을 생성했습니다. 소형/태블릿/가로 화면, 6개 언어, 최대 200% 글자와 120dp 합성 배너 공간을 포함합니다. Lint 오류 0개, 기존 경고 12개이며 출시용 최적화 빌드도 통과했습니다. 실제 다른 휴대전화 11대를 시험했다는 뜻은 아닙니다.
+## 파일 검증
 
-기존 SM-S926N / Android 16 전류 단위 보정을 유지했습니다. 사용자는 1.0.2를 S24+에서 테스트해 이상 없다고 보고했습니다. **미확인 모델의 mA 보고나 펌웨어 단위 변경에는 1000배 오차 위험이 남아 있어 전 기종 정상 동작을 보장하지 않습니다.** 전력은 배터리 기준 추정값입니다.
+Source revision: `0ccdcd7da1233472912a666f63f35e738a609147`
 
-문제가 있으면 홈의 ‘진단 내용 복사’를 사용하세요. 원본 센서 기록을 자동 업로드하지 않습니다.
-
-이 브랜치에는 APK, 같은 APK의 ZIP과 이 안내문만 있습니다.
-
-SHA-256:
-
-- APK: `ec4c33c2d02a2bd77a33999e8962b266d1e6b2f1a95720cb19d3b137536843a9`
-- ZIP: `33d0f9e7dcdc6da1e7a4b3c08d4b8705f588685e272496a5a9bbdb87b2b0515b`
+- ChargeCheck-1.0.3-debug.apk: `dab3de510fe46d8588d4568a5fa5af5cbce599fa09f5fb4d804ac6cdd51a9972`
+- ChargeCheck-debug.zip: `cbb9957dc634640596d408666b65af0a11734e023a976aee854c062100bd2f49`
+- ChargeCheck-1.0.3-source.zip: `e8bf58173b4abdab1eae6792340a20aa67e644fee3a8680cbfce88a598ba69df`
